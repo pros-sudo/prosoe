@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosoe Graphics | Flyers</title>
+    <style>
+        /* CSS STYLING */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 0;
+        }
+
+        header {
+            
+            background-color: #3b3b3b;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 15px;
+        }
+
+        nav ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: bold;
+            font: size 20px;
+
+        }
+        .login-btn {
+            background-color: green;
+         ;;
+        }
+
+        .logout-btn {
+            background-color: red;
+            display: none;
+        }
+
+        .flyer-box {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px;
+            background: rgb(165, 164, 164);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .flyer-box img {
+            width: 200px;
+            height: 250px;
+            border-radius: 5px;
+        }
+
+        .download-btn {
+            .download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007BFF; /* Blue background */
+  color: #fff; /* This makes the text white */
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        <p>
+        .popup input {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .popup button {
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup button:hover {
+            background: darkblue;
+        }
+
+        .page {
+            display: none;
+        }
+
+.search-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    font-size: 16px;
+    border: 2px solid #4b4a4a;
+    border-radius: 8px;
+}
+        .active {
+            display: block;
+        }
+        h2{
+            color: rgb(17, 17, 18);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Welcome to Prosoe Graphics</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('church')">Church Flyers</a></li>
+                <li><a href="#" onclick="showPage('celebration')">Celebration Flyers</a></li>
+                <li><a href="#" onclick="showPage('mockups')">Mockups & Patterns</a></li>
+ 
+                </ul>
+    
+        </nav>
+        <div class="nav-buttons">
+            <button id="login-btn" class="btn login-btn" onclick="showLoginPopup()">Sign Up / Login</button>
+            <button id="logout-btn" class="btn logout-btn" onclick="logout()">Logout</button>
+            
+            
+        </div>
+
+    </header>
+
+    <!-- LOGIN POPUP -->
+    <div id="login-popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h3>Sign Up / Login</h3>
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="login()">Submit</button>
+    </div>
+    </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchFlyers()" placeholder="Search flyers...">
+    </div>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+        <h2>Trending Flyers</h2>
+        <div class="flyer-box">
+            <img src="BIRTHDAY FLYER DESIGN.jpg" alt="Flyer 1">
+            <p>Birthday Flyer</p>
+            <button class="download-btn" onclick="requestDownload()">Download</button>
+        </div>
+        <div class="flyer-box">
+            <img src="Easter Sunday Miracle Service - Church Flyer.jpg" alt="Flyer 2">
+            <p>Birthday Celebration</p>
+            <button class="download-btn" onclick="requestDownload()">Download</button>
+        </div>
+    </div>
+    <div class="flyer-box">
+        <img src="LET'S CELEBRATE JESUS CHURCH FLYER DESIGN.jpg" alt="Flyer 2">
+        <p>Birthday Celebration</p>
+        <button class="download-btn" onclick="requestDownload()">Download</button>
+    </div>
+</div>
+<div class="flyer-box">
+    <img src="Festival of Prayer Flyer Design.jpeg" alt="Flyer 2">
+    <p>Prayer</p>
+    <button class="download-btn" onclick="requestDownload()">Download</button>
+</div>
+</div>
+<div class="flyer-box">
+    <img src="enoch2.jpg" alt="Flyer 2">
+    <p>Birthday Celebration</p>
+    <button class="download-btn" onclick="requestDownload()">Download</button>
+
+</div>
+    </section>
+    
+    </div>
+
+    <!-- CHURCH FLYERS PAGE -->
+    <section id="church" class="page">
+        <h2>Church Flyers</h2>
+        <div class="flyer-box">
+            <img src="sunday koinonia.jpg" alt="Church Flyer 1">
+            <p>Sunday Koinonia Flyer</p>
+            <button class="download-btn"><a href="sunday koinonia.jpg" download="sunday koinonia">Download</a>
+
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="chuch service.jpg" alt="Church Flyer 2">
+            <p>Church Revival Event</p>
+            <button class="download-btn"> <a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="church flyer design (2).jpeg" alt="Church Flyer 1">
+            <p>Sunday Worship Flyer</p>
+            <button class="download-btn"><a href="church flyer design (2).jpeg" download="Church flyer">Download</a>
+            </button>
+                
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="DRIP SUN.jpg" alt="Church Flyer 1">
+            <p>Drip Sunday Flyer</p>
+            <button class="download-btn"><a href="DRIP SUN.jpg" download="DRIP">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Church flyer (1).jpg" alt="Church Flyer 1">
+            <p>Sunday Worship Flyer</p>
+            <button class="download-btn"><a href="Church flyer (1).jpg" download="Evangelism">Download</a>
+        </button>
+            
+        </div>
+        <div class="flyer-box">
+            <img src="Church Flyer (3).jpg" alt="Church Flyer 1">
+            <p>Sunday Worship Flyer</p>
+            <button class="download-btn"><a href="Church Flyer (3).jpg" download="Church Flyer">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Evangelism week.jpg" alt="Church Flyer 1">
+            <p>Evangelism Flyerr</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="EASTER POSTER DESIGN.jpeg" alt="Church Flyer 1">
+            <p>Easter Flyer</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Church Conference Flyer Design.jpg" alt="Church Flyer 1">
+            <p>Church confrence</p>
+            <button class="download-btn"><a href="Church Conference Flyer Design.jpg" download="church confrence">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Church flyer design (13).jpeg" alt="Church Flyer 1">
+            <p>Church Worship Flyer</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Church flyer design (9).jpeg" alt="Church Flyer 1">
+            <p>Sunday Worship Flyer</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Fire Worship Church Flyer Design.jpeg" alt="Church Flyer 1">
+            <p>Fire Worship Flyer</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Join Us Church flyer design.jpg" alt="Church Flyer 1">
+            <p>Join Us Worship Flyer</p>
+            <button class="download-btn"><a href="Join Us Church flyer design.jpg" download="Join us">Download</a>
+        </button>
+        
+        </div>
+        <div class="flyer-box">
+            <img src="KLESIS.jpg" alt="Church Flyer 1">
+            <p>Klesis Service Flyer</p>
+            <button class="download-btn"><a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="MIDWEEK.jpg" alt="Church Flyer 1">
+            <p>Midweek Flyer</p>
+            <button class="download-btn"><a href="MIDWEEK.jpg" download="MIDWEEK">Download</a>
+            </button>
+        </div>
+
+    </section>
+
+    <!-- CELEBRATION FLYERS PAGE -->
+    <section id="celebration" class="page">
+        <h2>Celebration Flyers</h2>
+    </div>
+        <div class="flyer-box">
+            <img src="birthday sis copy.jpg" alt="Celebration Flyer 1">
+            <p>Birthday Party Flyer</p>
+            <button class="download-btn"><a href="birthday sis copy.jpg" download="Birthday">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="NAMING CEREMONY🎀(Flyer Design).jpeg" alt="Celebration Flyer 2">
+            <p>Anniversary Celebration</p>
+            <button class="download-btn" ><a href="NAMING CEREMONY🎀(Flyer Design).jpeg" download="Anniversary">Download</a>
+            </button>
+            
+        </div>
+        <div class="flyer-box">
+            <img src="BIRTHDAY DESIGN FLYER.jpeg" alt="Celebration Flyer 1">
+            <p>Birthday Party Flyer</p>
+            <button class="download-btn"><a href="TESCON2 copy.jpg" download="TESCON2">Download</a>
+            </button>  
+        </div>
+        <div class="flyer-box">
+            <img src="A Stunning Birthday Flyer.jpeg" alt="Celebration Flyer 1">
+            <p>Birthday Party Flyer</p>
+            <button class="download-btn" onclick="requestDownload()"><Download<a href="A Stunning Birthday Flyer.jpeg" download="Easter Poster">Download</button>
+        </div>
+        <div class="flyer-box">
+            <img src="oleku messa 3.jpg" alt="Celebration Flyer 1">
+            <p>Birthday Party Flyer</p>
+            <button class="download-btn" onclick="requestDownload()"><Download<a href="oleku messa 3.jpg" download="Easter Poster">Download</button>
+        </div>
+        <div class="flyer-box">
+            <img src="Season's Greetings Flyer.jpeg" alt="Celebration Flyer 1">
+            <p>Christmas Flyer</p>
+            <button class="download-btn" onclick="requestDownload()"><Download<a href="Season's Greetings Flyer.jpeg" download="Easter Poster">Download</button>
+        </div>
+        <div class="flyer-box">
+            <img src="SRC akwaaba week programme outline flyer designed by oppomence, Ghana_ Contact us on 0247369275.jpeg" alt="Celebration Flyer 1">
+            <p>SRC WEEK </p>
+            <button class="download-btn" onclick="requestDownload()"><a href="SRC akwaaba week programme outline flyer designed by oppomence, Ghana_ Contact us on 0247369275.jpeg" download="Easter Poster">Download</a>
+            </button>       
+        </div>
+        <div class="flyer-box">
+            <img src="ROSE FLYER.jpg" alt="Celebration Flyer 1">
+            <p>Bussiness Flyer</p>
+            <button class="download-btn" onclick="requestDownload()"><a href="ROSE FLYER.jpg" download="Easter Poster">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="webinar flyer design.jpg" alt="Celebration Flyer 1">
+            <p>Webinar Flyer</p>
+            <button class="download-btn"><a href="webinar flyer design.jpg" download="WEbinar">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="TESCON2 copy.jpg" alt="Celebration Flyer 1">
+            <p>Tescon Flyer</p>
+            <button class="download-btn"><a href="TESCON2 copy.jpg" download="TESCON2">Download</a>
+            </button>
+        </div>
+        <div class="flyer-box">
+            <img src="Food Flyer Design - Made with PosterMyWall (1).jpg" alt="Celebration Flyer 1">
+            <p>Food Flyerr</p>
+            <button class="download-btn"><a href="Food Flyer Design - Made with PosterMyWall (1).jpg" download="Food">Download</a>
+            </button> 
+        </div>
+        <div class="flyer-box">
+            <img src="prosoeee.jpg" alt="Celebration Flyer 1">
+            <p>Brand flyer</p>
+            <button class="download-btn"> <a href="prosoeee.jpg" download="Prosoe image">Download</a>
+            </button>
+        </div>
+    </div>
+    <div class="flyer-box">
+        <img src="Guess The Guest Flyer Design.jpg" alt="Celebration Flyer 1">
+        <p>Guess the Guest</p>
+        <button class="download-btn">
+            <a href="Guess The Guest Flyer Design.jpg" download="guess the minister">Download</a>
+        </button>
+    </div>
+</div>
+<div class="flyer-box">
+    <img src="Fashion Brand flyer.jpeg" alt="Celebration Flyer 1">
+    <p>Fashion flyer</p>
+    <button class="download-btn" onclick="requestDownload()">
+        <a href="Fashion Brand flyer.jpeg" download="Fashion">Download</a></button>
+</div>
+</div>
+<div class="flyer-box">
+    <img src="Congrats flyer.jpeg" alt="Celebration Flyer 1">
+    <p>Congrats flyer</p>
+    <button class="download-btn"><a href="Congrats flyer.jpeg" download="Congrats Flyer">Download</a>
+    </button>
+</div>
+</section>
+
+</section>
+
+</section>
+
+    </section>
+
+    <!-- MOCKUPS & PATTERNS PAGE -->
+    <section id="mockups" class="page">
+        <h2>Mockups & Patterns</h2>
+        <div class="flyer-box">
+            <img src="pngwing.com (18).png" alt="Mockup 1">
+            <p>vector</p>
+            <button class="download-btn"><a href="pngwing.com (18).png" download="pngwing 18">Download</a>
+
+            </button>
+        
+        </div>
+        <div class="flyer-box">
+            <img src="pngwing.com (19).png" alt="Mockup 2">
+            <p>Poster Design Mockup</p>
+            <button class="download-btn"><a href="pngwing.com (19).png" download="pngwing">Download</a>
+            </button>
+            </div>
+
+        </div>
+        <div class="flyer-box">
+            <img src="pngwing.com (21).png" alt="Mockup 2">
+            <p>Patterns</p>
+            <button class="download-btn"> <a href="pngwing.com (21).png" download="Pngwing">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="BG (1).jpg" alt="Mockup 2">
+            <p>Ovelay</p>
+            <button class="download-btn"> <a href="BG (1).jpg" download="Evangelism">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="pngwing.com (25).png" alt="Mockup 2">
+            <p>Poster Design Mockup</p>
+            <button class="download-btn"> <a href="Evangelism week.jpg" download="Evangelism">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Pattern layered background.jpeg" alt="Mockup 2">
+            <p>Pattern background</p>
+            <button class="download-btn"> <a href="Pattern layered background.jpeg" download="pattern layer">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Premium PSD _ Exodus 3d style text effect.jpg" alt="Mockup 2">
+            <p>Text Mockup</p>
+            <button class="download-btn"> <a href="Premium PSD _ Exodus 3d style text effect.jpg" download="Evangelism">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="pngwing.com (27).png" alt="Mockup 2">
+            <p>Png 27</p>
+            <button class="download-btn"><a href="pngwing.com (27).png" download="pngwing">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="pngwing.com (26).png" alt="Mockup 2">
+            <p>Scrreen overlay</p>
+            <button class="download-btn"><a href="pngwing.com (26).png" download="Evangelism">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="39e31d1f-ae69-4a03-ad60-c28a7840ec44.jpg" alt="Mockup 2">
+            <p>Poster Design Mockup</p>
+            <button class="download-btn"><a href="39e31d1f-ae69-4a03-ad60-c28a7840ec44.jpg" download="mockups">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Stay 3D editable text effect copy.png" alt="Mockup 2">
+            <p>Text Mockup</p>
+            <button class="download-btn"><a href="Stay 3D editable text effect copy.png" download="mockups">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Abstract Green Background Layers and Texture Design Art Stock Image - Image of fiber, brochure_ 45248739.jpg" alt="Mockup 2">
+            <p>Abstract Green Background</p>
+            <button class="download-btn"><a href="Abstract Green Background Layers and Texture Design Art Stock Image - Image of fiber, brochure_ 45248739.jpg" download="mockups Pattern">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Yellow Purple Gradient Color 3d Low Poly Technology Blur Background Wallpaper Image For Free Download - Pngtree.jpg" alt="Mockup 2">
+            <p>Poster Design Mockup</p>
+            <button class="download-btn"><a href="Yellow Purple Gradient Color 3d Low Poly Technology Blur Background Wallpaper Image For Free Download - Pngtree.jpg" download="mockups">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="a9c0ed42-1727-4f28-9b62-37e7caa4583c.jpg" alt="Mockup 2">
+            <p>White Overlay</p>
+            <button class="download-btn"><a href="a9c0ed42-1727-4f28-9b62-37e7caa4583c.jpg" download="mockups">Download</a>
+            </button>
+            </div>
+        </div>
+        <div class="flyer-box">
+            <img src="Birthday Background.jpg" alt="Mockup 2">
+            <p>Birthday Background</p>
+            <button class="download-btn"><a href="Birthday Background.jpg" download="mockups">Download</a>
+            </button>
+            </div>
+        </div>
+       
+    </section>
+
+  
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(section => section.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+        }
+        
+        function showLoginPopup() {
+            document.getElementById("login-popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("login-popup").style.display = "none";
+        }
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                localStorage.setItem("isLoggedIn", "true");
+                alert("Login successful!");
+                closePopup();
+                document.getElementById("logout-btn").style.display = "block";
+                document.getElementById("login-btn").style.display = "none";
+            } else {
+                alert("Please enter valid credentials.");
+            }
+        }
+
+        function checkLoginStatus() {
+            if (localStorage.getItem("isLoggedIn")) {
+                document.getElementById("logout-btn").style.display = "block";
+                document.getElementById("login-btn").style.display = "none";
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            alert("You have logged out.");
+            document.getElementById("logout-btn").style.display = "none";
+            document.getElementById("login-btn").style.display = "block";
+        }
+        function searchFlyers() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const flyers = document.querySelectorAll('.flyer-box');
+
+    flyers.forEach(flyer => {
+        const title = flyer.querySelector('p').innerText.toLowerCase();
+        if (title.includes(input)) {
+            flyer.style.display = 'inline-block';
+        } else {
+            flyer.style.display = 'none';
+        }
+    });
+}
+    </script>
+
+</body>
+</html>
