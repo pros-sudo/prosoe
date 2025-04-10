@@ -106,7 +106,9 @@ Prosoe Graphics** is a modern digital design platform offering high-quality visu
 
 For inquiries, collaborations, or support:  
 📧 **contact@prosoegraphics.com**  
-🌍 **[www.prosoegraphics.com](http://www.prosoegraphics.com)**
+🌍 **[www.prosoegraphics.com](http://www.prosoegraphics.com)
+Email:prosperanhwere@gmail.com
+Contributions are welcome.Please for this repository and submit pull up request
 
 ---
 
